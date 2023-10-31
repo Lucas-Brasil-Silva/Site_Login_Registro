@@ -1,0 +1,299 @@
+@charset "UTF-8";
+
+/* Importando a fonte 'Poppins' do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Definições gerais para todos os elementos HTML */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Definindo uma variável de cor personalizada */
+:root {
+    --cor-personalizada: #162938;
+}
+
+/* Estilos para o corpo da página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../imagens/background.jpg) no-repeat;
+    background-size: cover;
+}
+
+/* Estilos para o cabeçalho */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 5px;
+}
+
+/* Estilos para o logotipo */
+.logo {
+    text-align: center;
+    font-size: 2em;
+    color: white;
+    user-select: none;
+}
+
+/* Estilos para a navegação */
+.navegation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para links de navegação */
+.navegation a {
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 7px;
+}
+
+/* Estilos para a animação do sublinhado dos links de navegação ao passar o mouse */
+.navegation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0); /* Permite aplicar transformações 2D ou 3D a um elemento */
+    transform-origin: right;
+    transition: transform .5s; /* Permite suavizar as mudanças de propriedade ao longo de um período de tempo */
+}
+
+/* Estilos para o sublinhado dos links de navegação ao passar o mouse */
+.navegation a:hover::after {
+    transform: scaleX(1); /* Permite aplicar transformações 2D ou 3D a um elemento */
+    transform-origin: left;
+}
+
+/* Estilos para o botão de login na navegação */
+.navegation .bntLogin-popup {
+    width: 65px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: .5s; /* Permite suavizar as mudanças de propriedade ao longo de um período de tempo */
+}
+
+/* Estilos para o botão de login na navegação ao passar o mouse */
+.navegation .bntLogin-popup:hover {
+    background: white;
+    color: black;
+}
+
+/* Estilos para o contêiner principal */
+.wrapper {
+    position: relative;
+    margin-top: 100px;
+    width: 350px;
+    height: 370px;
+    background: transparent;
+    border: 2px solid lightsteelblue;
+    border-radius: 20px;
+    backdrop-filter: blur(20px); /* Criar um efeito de desfoque no elemento e permitir que o conteúdo de fundo seja visto através do elemento */
+    box-shadow: 0 0 30px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0); /* Permite aplicar transformações 2D ou 3D a um elemento */
+    transition: transform .5s, height .2s; /* Permite suavizar as mudanças de propriedade ao longo de um período de tempo */
+}
+
+/* Estilos para o contêiner principal quando ativo (pop-up aberto) */
+.wrapper.active-popup {
+    transform: scale(1); /* Permite aplicar transformações 2D ou 3D a um elemento */
+}
+
+/* Estilos para o contêiner principal quando ativo (pop-up aberto com altura estendida) */
+.wrapper.active {
+    height: 450px;
+}
+
+/* Estilos para as caixas de formulário */
+.wrapper .form-box {
+    width: 100%;
+    padding: 30px;
+}
+
+/* Estilos para a caixa de login */
+.wrapper .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+/* Estilos para a caixa de login quando ativo (escondido para a esquerda) */
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px); /* Aplica uma transformação de translação horizontal (movimento) ao elemento */
+}
+
+/* Estilos para a caixa de registro */
+.wrapper .form-box.register {
+    position: absolute;
+    transform: translateX(400px);
+}
+
+/* Estilos para a caixa de registro quando ativo (mostrado) */
+.wrapper.active .form-box.register {
+    transition: none;
+    transform: translateX(0);
+}
+
+/* Estilos para o ícone de fechar */
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: var(--cor-personalizada);
+    font-size: 2em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-bottom-left-radius: 20px;
+    z-index: 1; /* Controla a ordem de empilhamento dos elementos em um layout, determinando qual elemento deve aparecer na frente de outros */
+}
+
+/* Estilos para o título do formulário */
+.form-box h2 {
+    font-size: 2em;
+    color: var(--cor-personalizada);
+    text-align: center;
+}
+
+/* Estilos para as caixas de entrada de texto */
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid var(--cor-personalizada);
+    margin: 20px 0;
+}
+
+/* Estilos para as etiquetas das caixas de entrada de texto */
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: var(--cor-personalizada);
+    font-weight: 500;
+    pointer-events: none;
+    transition: .3s;
+}
+
+/* Estilos para as etiquetas das caixas de entrada de texto quando a entrada está focada ou preenchida */
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+/* Estilos para as caixas de entrada de texto */
+.input-box input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1em;
+    color: var(--cor-personalizada);
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+/* Estilos para os ícones dentro das caixas de entrada de texto */
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: var(--cor-personalizada);
+    line-height: 57px; /* Controla a altura da linha de texto dentro de um elemento */
+}
+
+/* Estilos para a seção de lembrar/esquecer a senha */
+.remember-forget {
+    font-size: .9em;
+    color: var(--cor-personalizada);
+    font-weight: 500;
+    margin: -5px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilos para a entrada de lembrar-se da senha */
+.remember-forget label input {
+    accent-color: var(--cor-personalizada);
+    margin-right: 5px;
+}
+
+/* Estilos para o link "Esqueceu sua senha?" */
+.remember-forget a {
+    color: var(--cor-personalizada);
+    text-decoration: none;
+}
+
+/* Estilos para o link "Esqueceu sua senha?" ao passar o mouse */
+.remember-forget a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para o botão */
+.btn {
+    width: 100%;
+    height: 45px;
+    background: var(--cor-personalizada);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+}
+
+/* Estilos para a seção "Não tenho uma conta?" ou "Já tem uma conta?" */
+.login-register {
+    font-size: .9em;
+    color: var(--cor-personalizada);
+    text-align: center;
+    font-weight: 500;
+    margin: 20px 0 10px;
+}
+
+/* Estilos para os links "Registrar" ou "Login" na seção "Não tenho uma conta?" ou "Já tem uma conta?" */
+.login-register p a {
+    text-decoration: none;
+    color: var(--cor-personalizada);
+    font-weight: 600;
+}
+
+/* Estilos para os links "Registrar" ou "Login" ao passar o mouse */
+.login-register p a:hover {
+    text-decoration: underline;
+}

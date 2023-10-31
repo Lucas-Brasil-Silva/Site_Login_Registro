@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+/* 
+    Breakpoints típicos de dispositivos:
+    - 576px para telefones no modo retrato
+    - 768px para tablets
+    - 992px para notebooks
+    - 1200px para dispositivos de tela grande
+*/
+
+/* Estilos para telas com largura mínima de 768px (tablets e dispositivos maiores) */
+@media screen and (min-width: 768px) {
+    /* Estilos para o cabeçalho (header) */
+    header {
+        padding: 40px 70px;
+        display: flex;
+        justify-content: space-between; /* Alinhamento horizontal dos elementos */
+        align-items: center; /* Alinhamento vertical dos elementos */
+        z-index: 99; /* Ordem de empilhamento (para ficar sobreposto a outros elementos) */
+    }
+    
+    /* Estilos para a navegação (menu) */
+    .navegation {
+        display: block;
+    }
+
+    /* Estilos para os links de navegação */
+    .navegation a {
+        margin-right: 10px;
+    }
+
+    /* Estilos para o botão "Login" na navegação */
+    .navegation .bntLogin-popup {
+        margin-left: 30px;
+    }
+
+    /* Estilos para o contêiner principal */
+    .wrapper {
+        width: 400px;
+        height: 400px;
+    }
+
+    /* Estilos para o contêiner principal quando ativo (pop-up aberto) */
+    .wrapper.active {
+        height: 500px;
+    }
+
+    /* Estilos para a caixa de formulário dentro do contêiner principal */
+    .wrapper .form-box {
+        padding: 40px; 
+    }
+}
