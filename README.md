@@ -1,5 +1,5 @@
 # Site de Login e Registro
-<p align="justify">Este é um site simples de login e registro, projetado com o intuito de aprimorar minhas habilidades em HTML e CSS. Sendo feito com base no canal <a href="https://www.youtube.com/@codehal" target="_blank">Codehal</a>. O site apresenta uma aparência moderna com animações suaves e é responsivo, adaptando-se a diferentes tamanhos de tela.</p>
+<p align="justify">Este é um site simples de login e registro, projetado com o intuito de aprimorar minhas habilidades em HTML e CSS. Sendo feito com base no canal <a style="text-decoration: none;" href="https://www.youtube.com/@codehal" target="_blank">Codehal</a>. O site apresenta uma aparência moderna com animações suaves e é responsivo, adaptando-se a diferentes tamanhos de tela.</p>
 
 ## Recursos
 O site inclui os seguintes recursos:
@@ -10,7 +10,7 @@ O site inclui os seguintes recursos:
 - **Responsividade:** O site é responsivo e se adapta a diferentes tamanhos de tela, tornando-o utilizável em dispositivos móveis, tablets e desktops.
 
 ## 🚀 Como acessar
-Para acessar basta clicar em <a href="https://lucas-brasil-silva.github.io/Site_Login_Registro/" target="_blank">🔗 visualizar site</a>.
+Para acessar basta clicar em <a style="text-decoration: none;" href="https://lucas-brasil-silva.github.io/Site_Login_Registro/" target="_blank">🔗 visualizar site</a>.
 
 ## Licença
-Este projeto é licenciado sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
+Este projeto é licenciado sob a licença MIT. Consulte o arquivo <a style="text-decoration: none;" href="LICENSE">LICENSE</a> para obter detalhes.
